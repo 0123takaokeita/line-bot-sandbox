@@ -2,4 +2,8 @@
 
 class Example::Component < ApplicationViewComponent
   with_collection_parameter :example
+
+  def initialize(example:)
+    @example = example
+  end
 end
