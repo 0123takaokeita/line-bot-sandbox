@@ -2,7 +2,7 @@
 
 <h1>Posts</h1>
 
-<%= render(Example::Component.new(example: "Hello World!")) %>
+<%= component(:example, example: "Hello World!") %>
 
 <div id="posts">
   <% @posts.each do |post| %>
