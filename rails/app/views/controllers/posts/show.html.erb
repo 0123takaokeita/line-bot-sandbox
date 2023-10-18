@@ -1,10 +1,8 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @post %>
+<%= component "notice", text: notice %>
+<%= component "card", title: @post.title, body: @post.body, item: @post %>
 
 <div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
-
-  <%= button_to "Destroy this post", @post, method: :delete %>
+  <%= component "link", text: 'edit', path: edit_post_path(@post) %>
+  <%= component "link", text: 'index', path: posts_path %>
+  <%= component "button", text: 'delete', path: post_path %>
 </div>
