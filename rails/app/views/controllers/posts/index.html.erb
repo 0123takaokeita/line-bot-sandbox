@@ -1,14 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Posts</h1>
-<%= component "example", example: "Hello World!" %>
+<%= component "notice", text: notice %>
+<%= component "header", title: "Posts" %>
 <div id="posts">
   <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
+    <%= component "card", title: post.title, body: post.body, item: post %>
   <% end %>
 </div>
 
-<%= link_to "New post", new_post_path %>
+<%= component "link", text: 'New', path: new_post_path %>
