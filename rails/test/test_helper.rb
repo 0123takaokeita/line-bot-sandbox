@@ -1,6 +1,7 @@
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
+require "minitest/reporters"
 
 module ActiveSupport
   class TestCase
@@ -11,5 +12,11 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
+
+    # test result formater
+    Minitest::Reporters.use! [
+      Minitest::Reporters::SpecReporter.new,
+      Minitest::Reporters::MeanTimeReporter.new(show_progress: false) # => Produces a report summary showing the slowest running tests
+    ]
   end
 end
