@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-require "test_helper"
+require 'test_helper'
 
 class Notice::ComponentTest < ActiveSupport::TestCase
   include ViewComponent::TestHelpers
 
-  def test_renders
-    component = build_component
+  test 'test_render' do
+    component = build_component text: 'test'
 
     render_inline(component)
 
-    assert_selector "div"
+    assert_selector 'div'
   end
 
   private

@@ -2,20 +2,20 @@
 
 require "test_helper"
 
-class Example::ComponentTest < ActiveSupport::TestCase
+class Header::ComponentTest < ActiveSupport::TestCase
   include ViewComponent::TestHelpers
 
   def test_renders
-    component = build_component
+    component = build_component(title: 'test')
 
     render_inline(component)
 
-    assert_selector "div"
+    assert_selector 'h1'
   end
 
   private
 
   def build_component(**options)
-    Example::Component.new(**options)
+    Header::Component.new(**options)
   end
 end
