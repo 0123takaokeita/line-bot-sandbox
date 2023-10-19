@@ -1,16 +1,17 @@
 # frozen_string_literal: true
 
-require "test_helper"
+require 'test_helper'
 
 class Card::ComponentTest < ActiveSupport::TestCase
   include ViewComponent::TestHelpers
 
-  def test_renders
-    component = build_component
+  test 'test_renders' do
+    component = build_component title: 'test', body: 'test', item: 'test'
 
     render_inline(component)
 
-    assert_selector "div"
+    assert_selector 'div'
+    assert_selector 'h5'
   end
 
   private

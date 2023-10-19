@@ -5,12 +5,12 @@ require "test_helper"
 class Link::ComponentTest < ActiveSupport::TestCase
   include ViewComponent::TestHelpers
 
-  def test_renders
-    component = build_component
+  test 'test_renders' do
+    component = build_component text: 'test', path: '/'
 
     render_inline(component)
 
-    assert_selector "div"
+    assert_selector 'a'
   end
 
   private
