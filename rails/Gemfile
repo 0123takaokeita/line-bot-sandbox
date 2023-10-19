@@ -70,3 +70,12 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# view component拡張ライブラリ
+gem "view_component-contrib"
+
+# view component 本体
+gem "view_component", "~> 3.6"
+
+# view componentの拡張ライブラリ
+gem "dry-initializer", "~> 3.1"
