@@ -1,8 +1,10 @@
 <%= component "notice", text: notice %>
-<%= component "card", title: @post.title, body: @post.body, item: @post %>
+
+<%= link_to edit_post_path(@post) do %>
+  <%= component "card", title: @post.title, body: @post.body, item: @post %>
+<% end %>
 
 <div>
-  <%= component "link", text: 'edit', path: edit_post_path(@post) %>
   <%= component "link", text: 'index', path: posts_path %>
   <%= component "button", text: 'delete', path: post_path %>
 </div>
