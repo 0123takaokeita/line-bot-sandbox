@@ -23,5 +23,8 @@ module Line
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.autoload_paths << Rails.root.join("app", "views", "components")
+    config.view_component.preview_paths << Rails.root.join("app", "views", "components")
   end
 end
