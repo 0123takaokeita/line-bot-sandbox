@@ -8,4 +8,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "posts#index"
+
+  Rails.application.routes.draw do
+    if Rails.env.development?
+      # lookbook参照用のルーティングを追加
+      # NOTE: https://lookbook.build/guide
+      mount Lookbook::Engine, at: "/lookbook"
+    end
+  end
 end

@@ -48,9 +48,11 @@ gem "bootstrap"
 gem "jquery-rails"
 
 # view component拡張ライブラリ
+# NOTE: https://github.com/palkan/view_component-contrib
 gem "view_component-contrib"
 
 # view component 本体
+# NOTE: https://viewcomponent.org/
 gem "view_component"
 
 # view componentの拡張ライブラリ
@@ -64,6 +66,12 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+  # view componentのpreview用
+  # NOTE: https://lookbook.build/guide
+  gem "lookbook", ">= 2.1.1"
+  # lookbookのhotreload用
+  gem "listen"
 
   # Annotate ActiveRecord models
   gem 'annotate'
