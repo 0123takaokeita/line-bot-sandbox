@@ -5,5 +5,6 @@ class Link::Preview < ApplicationViewComponentPreview
   # self.container_class = "w-1/2 border border-gray-300"
 
   def default
+    component 'link', text: 'Link', path: '#'
   end
 end
