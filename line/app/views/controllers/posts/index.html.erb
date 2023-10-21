@@ -1,0 +1,13 @@
+<%= component "notice", text: notice %>
+<%= component "header", title: "Posts" %>
+<%= component "link", text: 'New', path: new_post_path %>
+<div id="posts" class="container">
+  <div class="row">
+    <% @posts.each do |post| %>
+      <%= link_to post, class: 'p-2 col-4' do %>
+        <%= component "card", title: post.title, body: post.body, item: post %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
