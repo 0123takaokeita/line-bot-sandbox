@@ -1,1 +1,5 @@
-<%= button_to text, path, method: :delete, class: 'btn btn-danger' %>
+<% if theme == :primary %>
+  <%= button_to text, path, class: 'btn btn-primary' %>
+<% else %>
+  <%= button_to text, path, method: :delete, class: 'btn btn-danger' %>
+<% end %>

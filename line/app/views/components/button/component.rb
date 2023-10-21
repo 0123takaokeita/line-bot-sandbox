@@ -3,4 +3,5 @@
 class Button::Component < ApplicationViewComponent
   option :text
   option :path
+  option :theme, default: proc { :primary }
 end

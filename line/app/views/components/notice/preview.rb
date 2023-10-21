@@ -5,5 +5,6 @@ class Notice::Preview < ApplicationViewComponentPreview
   # self.container_class = "w-1/2 border border-gray-300"
 
   def default
+    component 'notice', text: 'Hello, noice!'
   end
 end

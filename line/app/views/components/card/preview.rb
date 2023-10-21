@@ -13,7 +13,7 @@ class Card::Preview < ApplicationViewComponentPreview
     component 'card', title: 'title', body: 'body' 
   end
 
-  def with_image
+  def secondary
     component 'card', title: 'title', body: 'body2'
   end
 end
