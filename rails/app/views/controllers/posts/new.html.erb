@@ -1,9 +1,3 @@
-<h1>New post</h1>
-
+<%= component 'header', title: 'New post'%>
 <%= render "form", post: @post %>
-
-<br>
-
-<div>
-  <%= link_to "Back to posts", posts_path %>
-</div>
+<%= component 'link', path: posts_path, text: 'Back to index' %>
