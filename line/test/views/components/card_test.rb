@@ -11,7 +11,7 @@ class Card::ComponentTest < ActiveSupport::TestCase
     render_inline(component)
 
     assert_selector 'div'
-    assert_selector 'h5'
+    assert_selector 'h4'
   end
 
   private
