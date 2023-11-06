@@ -1,0 +1,28 @@
+---
+
+version: '3.8'
+volumes:
+  # rails_data:
+  #   driver: local
+  redis_data:
+    driver: local
+
+services:
+  rails:
+    container_name: rails
+    build: rails/docker
+    image: rails
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./rails:/rails
+    tty: true
+  redis:
+    container_name: redis
+    image: 'docker.dragonflydb.io/dragonflydb/dragonfly'
+    ulimits:
+      memlock: -1
+    ports:
+      - '16379:6379'
+    volumes:
+      - redis_data:/data
